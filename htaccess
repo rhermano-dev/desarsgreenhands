@@ -1,0 +1,14 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} desarsgreenhands\.com [NC]
+RewriteCond %{SERVER_PORT} 80
+
+RewriteCond %{HTTP_USER_AGENT} "android" [NC]
+RewriteRule ^(.*)$ /android/$1 [L,QSA]
+
+RewriteCond %{HTTP_USER_AGENT} "iphone|ipod|ipad" [NC]
+RewriteRule ^(.*)$ /ios/$1 [L,QSA]
+
+RewriteRule ^(.*)$ https://desarsgreenhands.com/$1 [R,L]
+
+
+
